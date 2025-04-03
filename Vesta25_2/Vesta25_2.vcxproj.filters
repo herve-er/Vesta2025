@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Fichiers sources">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Fichiers de ressources">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\capabilities">
+      <UniqueIdentifier>{9bad77ce-68ca-49cf-bc1a-b62386eb0774}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\capabilities">
+      <UniqueIdentifier>{9d849a98-8ac7-48bc-b260-b230bc426b82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\devices">
+      <UniqueIdentifier>{f887d49e-8026-4f5e-b10b-ee51d6ba27eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\devices">
+      <UniqueIdentifier>{3ac48d57-b35f-4cb5-82dd-2d2cff26c9ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\devices\lights">
+      <UniqueIdentifier>{c41783a5-1b68-4f3f-b062-fbbc3168522a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\devices\huebridge">
+      <UniqueIdentifier>{003ccd06-7b25-4ada-93e2-6b85d9f922bb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Vesta25_2.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\capabilities\capability.cpp">
+      <Filter>Fichiers sources\capabilities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\devices\DeviceFactory.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\devices\huebridge\huebridge.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\capabilities\capability.h">
+      <Filter>Fichiers d%27en-tête\capabilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\capabilities\onoff.h">
+      <Filter>Fichiers d%27en-tête\capabilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\capabilities\brightness.h">
+      <Filter>Fichiers d%27en-tête\capabilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\devices\devices.h">
+      <Filter>Fichiers d%27en-tête\devices</Filter>
+    </ClInclude>
+    <ClInclude Include="src\devices\lights\basiclight.h">
+      <Filter>Fichiers d%27en-tête\devices\lights</Filter>
+    </ClInclude>
+    <ClInclude Include="src\devices\devicefactory.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="src\devices\lights\dimmablelight.h">
+      <Filter>Fichiers d%27en-tête\devices\lights</Filter>
+    </ClInclude>
+    <ClInclude Include="src\devices\huebridge\huebridge.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
