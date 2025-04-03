@@ -6,4 +6,5 @@
 /Vesta25_2/Vesta25_2/x64/Debug
 /Vesta25_2/x64/Debug
 /x64/Debug
-*.vcxproj*
+
+/.vs
