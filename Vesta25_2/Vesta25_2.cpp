@@ -4,34 +4,24 @@
 
 #include <iostream>
 
-#include "src/devices/lights/basiclight.h"
+#include "src/devices/devicemanager.h"
+#include "src/devices/huebridge/huebridge.h"
+#include "src/devices/lights/hue/huebasiclight.h"
 int main() {
-  BasicLight light;
-  light.setState(OnOff::State::on);
-  light.setState(OnOff::State::on);
-  light.setState(OnOff::State::off);
-  light.setState(OnOff::State::off);
-  light.switchState();
-  light.switchState();
-  std::cout << "res get State:" << static_cast<int>(light.getState());
+  auto deviceManager = std::make_shared<DeviceManager>();
+  const auto bridgeId = deviceManager->addDevice<HueBridge>();
+  const auto lightId = deviceManager->addDevice<hueBasicLight>();
 
-
-  std::cout << "Hello World!\n";
+  auto bridge =
+      std::dynamic_pointer_cast<HueBridge>(deviceManager->getDevice(bridgeId));
+  bridge->connect(bridge->getAvailableBridges()[0]);  // Connect to the first
+                                                      // available bridge
+  auto light = std::dynamic_pointer_cast<hueBasicLight>(
+      deviceManager->getDevice(lightId));
+  light->setBridgeId(bridgeId);
+  light->setLightHueId(1);
 }
-
-// Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage
-// Déboguer le programme : F5 ou menu Déboguer > Démarrer le débogage
-
-// Astuces pour bien démarrer :
-//   1. Utilisez la fenêtre Explorateur de solutions pour ajouter des fichiers
-//   et les gérer.
-//   2. Utilisez la fenêtre Team Explorer pour vous connecter au contrôle de
-//   code source.
-//   3. Utilisez la fenêtre Sortie pour voir la sortie de la génération et
-//   d'autres messages.
-//   4. Utilisez la fenêtre Liste d'erreurs pour voir les erreurs.
-//   5. Accédez à Projet > Ajouter un nouvel élément pour créer des fichiers de
-//   code, ou à Projet > Ajouter un élément existant pour ajouter des fichiers
-//   de code existants au projet.
-//   6. Pour rouvrir ce projet plus tard, accédez à Fichier > Ouvrir > Projet et
-//   sélectionnez le fichier .sln.
+// HueBridge bridge;
+// bridge.setId(0);
+// bridge.getAvailableBridges();
+// bridge.connect(bridge.getAvailableBridges()[0]);

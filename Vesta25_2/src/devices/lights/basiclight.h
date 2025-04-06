@@ -5,6 +5,6 @@
 #include "src/devices/devices.h"
 class BasicLight : public Device, public OnOff {
  public:
-  BasicLight() : Device(), OnOff() {}
+  using Device::Device;
   virtual ~BasicLight() = default;
 };

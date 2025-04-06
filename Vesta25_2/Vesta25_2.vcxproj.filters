@@ -31,6 +31,18 @@
     <Filter Include="Fichiers d%27en-tête\devices\huebridge">
       <UniqueIdentifier>{003ccd06-7b25-4ada-93e2-6b85d9f922bb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="3rdParty">
+      <UniqueIdentifier>{edabc741-893d-4b3a-9363-690ed297e02b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rdParty\hueplusplus">
+      <UniqueIdentifier>{2a5031c7-0947-424e-8539-d552c0efb62c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rdParty\mbetls">
+      <UniqueIdentifier>{c6e029e1-068a-4d7c-a732-a8d84fe31f54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\devices\lights\hue">
+      <UniqueIdentifier>{821172b6-9ec4-4efb-9d1d-4c97b7e08529}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Vesta25_2.cpp">
@@ -43,6 +55,384 @@
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="src\devices\huebridge\huebridge.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\src\Action.cpp">
+      <Filter>3rdParty\hueplusplus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\src\APICache.cpp">
+      <Filter>3rdParty\hueplusplus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\src\BaseDevice.cpp">
+      <Filter>3rdParty\hueplusplus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\src\BaseHttpHandler.cpp">
+      <Filter>3rdParty\hueplusplus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\src\Bridge.cpp">
+      <Filter>3rdParty\hueplusplus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\src\BridgeConfig.cpp">
+      <Filter>3rdParty\hueplusplus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\src\CLIPSensors.cpp">
+      <Filter>3rdParty\hueplusplus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\src\ColorUnits.cpp">
+      <Filter>3rdParty\hueplusplus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\src\EntertainmentMode.cpp">
+      <Filter>3rdParty\hueplusplus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\src\ExtendedColorHueStrategy.cpp">
+      <Filter>3rdParty\hueplusplus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\src\ExtendedColorTemperatureStrategy.cpp">
+      <Filter>3rdParty\hueplusplus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\src\Group.cpp">
+      <Filter>3rdParty\hueplusplus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\src\HueCommandAPI.cpp">
+      <Filter>3rdParty\hueplusplus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\src\HueDeviceTypes.cpp">
+      <Filter>3rdParty\hueplusplus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\src\HueException.cpp">
+      <Filter>3rdParty\hueplusplus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\src\Light.cpp">
+      <Filter>3rdParty\hueplusplus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\src\ModelPictures.cpp">
+      <Filter>3rdParty\hueplusplus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\src\NewDeviceList.cpp">
+      <Filter>3rdParty\hueplusplus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\src\Rule.cpp">
+      <Filter>3rdParty\hueplusplus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\src\Scene.cpp">
+      <Filter>3rdParty\hueplusplus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\src\Schedule.cpp">
+      <Filter>3rdParty\hueplusplus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\src\Sensor.cpp">
+      <Filter>3rdParty\hueplusplus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\src\SimpleBrightnessStrategy.cpp">
+      <Filter>3rdParty\hueplusplus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\src\SimpleColorHueStrategy.cpp">
+      <Filter>3rdParty\hueplusplus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\src\SimpleColorTemperatureStrategy.cpp">
+      <Filter>3rdParty\hueplusplus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\src\StateTransaction.cpp">
+      <Filter>3rdParty\hueplusplus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\src\TimePattern.cpp">
+      <Filter>3rdParty\hueplusplus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\src\UPnP.cpp">
+      <Filter>3rdParty\hueplusplus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\src\Utils.cpp">
+      <Filter>3rdParty\hueplusplus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\src\WinHttpHandler.cpp">
+      <Filter>3rdParty\hueplusplus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\src\ZLLSensors.cpp">
+      <Filter>3rdParty\hueplusplus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\aes.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\aesni.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\aria.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\asn1parse.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\asn1write.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\base64.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\bignum.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\camellia.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\ccm.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\chacha20.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\chachapoly.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\cipher.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\cipher_wrap.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\cmac.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\constant_time.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\ctr_drbg.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\debug.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\des.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\dhm.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\ecdh.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\ecdsa.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\ecjpake.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\ecp.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\ecp_curves.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\entropy.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\entropy_poll.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\error.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\gcm.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\hkdf.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\hmac_drbg.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\md.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\md5.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\memory_buffer_alloc.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\mps_reader.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\mps_trace.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\net_sockets.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\nist_kw.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\oid.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\padlock.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\pem.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\pk.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\pk_wrap.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\pkcs5.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\pkcs12.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\pkparse.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\pkwrite.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\platform.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\platform_util.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\poly1305.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\psa_crypto.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\psa_crypto_aead.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\psa_crypto_cipher.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\psa_crypto_client.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\psa_crypto_driver_wrappers.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\psa_crypto_ecp.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\psa_crypto_hash.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\psa_crypto_mac.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\psa_crypto_rsa.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\psa_crypto_se.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\psa_crypto_slot_management.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\psa_crypto_storage.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\psa_its_file.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\ripemd160.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\rsa.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\rsa_alt_helpers.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\sha1.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\sha256.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\sha512.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\ssl_cache.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\ssl_ciphersuites.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\ssl_client.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\ssl_cookie.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\ssl_debug_helpers_generated.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\ssl_msg.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\ssl_ticket.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\ssl_tls.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\ssl_tls12_client.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\ssl_tls12_server.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\ssl_tls13_client.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\ssl_tls13_generic.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\ssl_tls13_keys.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\ssl_tls13_server.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\threading.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\timing.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\version.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\version_features.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\x509.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\x509_create.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\x509_crl.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\x509_crt.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\x509_csr.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\x509write_crt.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hueplusplus\lib\mbedtls\library\x509write_csr.c">
+      <Filter>3rdParty\mbetls</Filter>
+    </ClCompile>
+    <ClCompile Include="src\devices\lights\hue\huebasiclight.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="devicemanager.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
@@ -69,6 +459,12 @@
       <Filter>Fichiers d%27en-tête\devices\lights</Filter>
     </ClInclude>
     <ClInclude Include="src\devices\huebridge\huebridge.h">
+      <Filter>Fichiers d%27en-tête\devices\huebridge</Filter>
+    </ClInclude>
+    <ClInclude Include="src\devices\lights\hue\huebasiclight.h">
+      <Filter>Fichiers d%27en-tête\devices\lights\hue</Filter>
+    </ClInclude>
+    <ClInclude Include="src\devices\devicemanager.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
