@@ -71,7 +71,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(SolutionDir)\hueplusplus\lib\json\single_include;$(SolutionDir)\hueplusplus\lib\mbedtls\include;$(SolutionDir)\hueplusplus\lib\mbedtls\library;$(SolutionDir)\hueplusplus\include;$(ProjectDir)</IncludePath>
+    <IncludePath>C:\Users\herve\source\repos\Vesta25_2\sqlite_orm\include\sqlite_orm;C:\Users\herve\source\repos\Vesta25_2\sqlite3;$(SolutionDir)\hueplusplus\lib\json\single_include;$(SolutionDir)\hueplusplus\lib\mbedtls\include;$(SolutionDir)\hueplusplus\lib\mbedtls\library;$(SolutionDir)\hueplusplus\include;$(ProjectDir)</IncludePath>
     <AllProjectIncludesArePublic>true</AllProjectIncludesArePublic>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -257,6 +257,8 @@
     <ClCompile Include="..\hueplusplus\src\Utils.cpp" />
     <ClCompile Include="..\hueplusplus\src\WinHttpHandler.cpp" />
     <ClCompile Include="..\hueplusplus\src\ZLLSensors.cpp" />
+    <ClCompile Include="..\sqlite3\shell.c" />
+    <ClCompile Include="..\sqlite3\sqlite3.c" />
     <ClCompile Include="devicemanager.cpp" />
     <ClCompile Include="src\capabilities\capability.cpp" />
     <ClCompile Include="src\devices\DeviceFactory.cpp" />

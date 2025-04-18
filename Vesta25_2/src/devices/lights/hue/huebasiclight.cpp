@@ -27,13 +27,13 @@ void hueBasicLight::setLightHueId(int64_t id) {
 Device::ConfigureResult hueBasicLight::configure(
     nlohmann::json cofigurationJson) {
   // Check the JSON validity
-  if (!cofigurationJson.contains("huebasiclightJson"))
+  if (!cofigurationJson.contains("huebasiclight"))
     return ConfigureResult(ConfigureResult::Code::NotEnoughtInformation,
-                           "huebasiclightJson field is required");
-  if (!cofigurationJson.at("huebasiclightJson").is_object())
+                           "huebasiclight field is required");
+  if (!cofigurationJson.at("huebasiclight").is_object())
     return ConfigureResult(ConfigureResult::Code::NotEnoughtInformation,
-                           "huebasiclightJson should be an object");
-  const auto &huebasiclightJson = cofigurationJson.at("huebasiclightJson");
+                           "huebasiclight should be an object");
+  const auto &huebasiclightJson = cofigurationJson.at("huebasiclight");
 
   if (!huebasiclightJson.contains("bridgeId"))
     return ConfigureResult(ConfigureResult::Code::NotEnoughtInformation,

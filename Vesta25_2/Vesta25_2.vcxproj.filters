@@ -43,6 +43,9 @@
     <Filter Include="Fichiers d%27en-tête\devices\lights\hue">
       <UniqueIdentifier>{821172b6-9ec4-4efb-9d1d-4c97b7e08529}</UniqueIdentifier>
     </Filter>
+    <Filter Include="3rdParty\sqlite3">
+      <UniqueIdentifier>{524caa61-8fc2-4020-8bb4-30e4ca1db12c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Vesta25_2.cpp">
@@ -437,6 +440,12 @@
     </ClCompile>
     <ClCompile Include="src\devices\lights\basiclight.cpp">
       <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sqlite3\shell.c">
+      <Filter>3rdParty\sqlite3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sqlite3\sqlite3.c">
+      <Filter>3rdParty\sqlite3</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

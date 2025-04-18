@@ -1,3 +1,6 @@
 [submodule "hueplusplus"]
 	path = hueplusplus
 	url = https://github.com/enwi/hueplusplus
+[submodule "sqlite_orm"]
+	path = sqlite_orm
+	url = https://github.com/fnc12/sqlite_orm
