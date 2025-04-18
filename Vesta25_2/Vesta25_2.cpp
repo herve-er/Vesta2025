@@ -14,14 +14,25 @@ int main() {
 
   auto bridge =
       std::dynamic_pointer_cast<HueBridge>(deviceManager->getDevice(bridgeId));
-  bridge->connect(bridge->getAvailableBridges()[0]);  // Connect to the first
-                                                      // available bridge
+  auto bridgeConfig = bridge->getAvailableBridges()[0];
+  nlohmann::json bridgeJsonConfig;
+  bridgeJsonConfig["huebridge"]["ip"] = bridgeConfig.ip;
+  bridgeJsonConfig["huebridge"]["port"] = bridgeConfig.port;
+  bridgeJsonConfig["huebridge"]["mac"] = bridgeConfig.mac;
+
+  auto res = bridge->configure(bridgeJsonConfig);  // Connect to the first
+                                                   // available bridge
+  std::cout << res.text << std::endl;
   auto light = std::dynamic_pointer_cast<hueBasicLight>(
       deviceManager->getDevice(lightId));
-  light->setBridgeId(bridgeId);
-  light->setLightHueId(1);
+  nlohmann::json lightJsonConfig;
+  lightJsonConfig["huebasiclightJson"]["bridgeId"] = bridgeId;
+  lightJsonConfig["huebasiclightJson"]["lightId"] = 7;
+  light->configure(lightJsonConfig);
+  while (true) {
+    light->setState(OnOff::State::on);
+    std::this_thread::sleep_for(std::chrono::seconds(1));
+    light->setState(OnOff::State::off);
+    std::this_thread::sleep_for(std::chrono::seconds(1));
+  }
 }
-// HueBridge bridge;
-// bridge.setId(0);
-// bridge.getAvailableBridges();
-// bridge.connect(bridge.getAvailableBridges()[0]);

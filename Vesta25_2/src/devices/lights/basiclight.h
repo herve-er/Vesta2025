@@ -6,5 +6,7 @@
 class BasicLight : public Device, public OnOff {
  public:
   using Device::Device;
+  ResultSwitch switchState();
+
   virtual ~BasicLight() = default;
 };

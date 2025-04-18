@@ -12,8 +12,8 @@ void hueBasicLight::setBridgeId(DeviceId id) {
 
 void hueBasicLight::setLightHueId(int64_t id) {
   if (_bridge) {
-    auto lights = _bridge->_bridge->lights().getAll();
-    for (const auto& light : lights) {
+    auto lights = _bridge->getBridge()->lights().getAll();
+    for (const auto &light : lights) {
       std::cout << "Light discovered:" << light.getId() << std::endl;
       if (light.getId() == id) {
         _hueId = id;
@@ -24,11 +24,86 @@ void hueBasicLight::setLightHueId(int64_t id) {
   throw std::runtime_error("Light not found");
 }
 
-OnOff::ResultSetState hueBasicLight::setState(State) {
-  return ResultSetState::error;
+Device::ConfigureResult hueBasicLight::configure(
+    nlohmann::json cofigurationJson) {
+  // Check the JSON validity
+  if (!cofigurationJson.contains("huebasiclightJson"))
+    return ConfigureResult(ConfigureResult::Code::NotEnoughtInformation,
+                           "huebasiclightJson field is required");
+  if (!cofigurationJson.at("huebasiclightJson").is_object())
+    return ConfigureResult(ConfigureResult::Code::NotEnoughtInformation,
+                           "huebasiclightJson should be an object");
+  const auto &huebasiclightJson = cofigurationJson.at("huebasiclightJson");
+
+  if (!huebasiclightJson.contains("bridgeId"))
+    return ConfigureResult(ConfigureResult::Code::NotEnoughtInformation,
+                           "bridgeId field is required");
+  if (!huebasiclightJson.at("bridgeId").is_number_integer())
+    return ConfigureResult(ConfigureResult::Code::NotEnoughtInformation,
+                           "bridgeId field should be a number");
+  if (!huebasiclightJson.contains("lightId"))
+    return ConfigureResult(ConfigureResult::Code::NotEnoughtInformation,
+                           "lightId field is required");
+  if (!huebasiclightJson.at("lightId").is_number_integer())
+    return ConfigureResult(ConfigureResult::Code::NotEnoughtInformation,
+                           "lightId field should be a number");
+
+  // Find the bridge device
+  auto hueBridge = getDeviceManager()->getDevice<HueBridge>(
+      huebasiclightJson.at("bridgeId"));
+  if (!hueBridge) {
+    return ConfigureResult(ConfigureResult::Code::Failed,
+                           "No hue bridge found with the provided Id");
+  }
+  auto rawBridge = hueBridge->getBridge();
+  try {
+    rawBridge->lights().refresh();
+    _light = std::make_unique<hueplusplus::Light>(
+        rawBridge->lights().get(huebasiclightJson.at("lightId")));
+  } catch (std::system_error &sysErr) {
+    return ConfigureResult(
+        ConfigureResult::Code::Failed,
+        "Unexpected error while communicating with the light: " +
+            std::string(sysErr.what()));
+  } catch (hueplusplus::HueAPIResponseException &hueErr) {
+    return ConfigureResult(ConfigureResult::Code::Failed,
+                           "Unexpected error while finding the light: " +
+                               std::string(hueErr.what()));
+  } catch (hueplusplus::HueException &hueErr) {
+    return ConfigureResult(ConfigureResult::Code::Failed,
+                           "Unexpected error while finding the light: " +
+                               std::string(hueErr.what()));
+  } catch (nlohmann::json::parse_error &hueErr) {
+    return ConfigureResult(ConfigureResult::Code::Failed,
+                           "Unexpected error while finding the light: " +
+                               std::string(hueErr.what()));
+  } catch (...) {
+    return ConfigureResult(ConfigureResult::Code::Failed,
+                           "Unexpected error while finding the light");
+  }
+
+  return ConfigureResult(ConfigureResult::Code::Success, "yeay");
 }
 
-OnOff::ResultSwitch hueBasicLight::switchState() { return ResultSwitch::error; }
+OnOff::ResultSetState hueBasicLight::setState(State newState) {
+  if (!_light) {
+    return ResultSetState::error;
+  }
+  switch (newState) {
+    case State::on:
+      if (_light->isOn()) return ResultSetState::alreadyOn;
+      _light->on();
+      return ResultSetState::turnedOn;
+      break;
+    case State::off:
+      if (!_light->isOn()) return ResultSetState::alreadyOff;
+      _light->off();
+      return ResultSetState::turnedOff;
+      break;
+    default:
+      return ResultSetState::error;
+  }
+}
 
 OnOff::ResultGetState hueBasicLight::getState() {
   return ResultGetState::error;

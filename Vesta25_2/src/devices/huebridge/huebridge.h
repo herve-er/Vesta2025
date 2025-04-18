@@ -14,8 +14,10 @@ class HueBridge : public Device {
   using BridgeIdentification = hueplusplus::BridgeFinder::BridgeIdentification;
   using Device::Device;
   static std::vector<BridgeIdentification> getAvailableBridges();
-  void connect(const BridgeIdentification& bridgeIdentification);
-  std::unique_ptr<hueplusplus::Bridge> _bridge;
+  ConfigureResult configure(nlohmann::json cofigurationJson);
+
+  std::shared_ptr<hueplusplus::Bridge> getBridge() { return _bridge; }
 
  private:
+  std::shared_ptr<hueplusplus::Bridge> _bridge;
 };

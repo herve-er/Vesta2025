@@ -261,6 +261,7 @@
     <ClCompile Include="src\capabilities\capability.cpp" />
     <ClCompile Include="src\devices\DeviceFactory.cpp" />
     <ClCompile Include="src\devices\huebridge\huebridge.cpp" />
+    <ClCompile Include="src\devices\lights\basiclight.cpp" />
     <ClCompile Include="src\devices\lights\hue\huebasiclight.cpp" />
     <ClCompile Include="Vesta25_2.cpp" />
   </ItemGroup>

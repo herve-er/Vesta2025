@@ -17,6 +17,9 @@ class DeviceManager : public std::enable_shared_from_this<DeviceManager> {
 
   std::shared_ptr<Device> getDevice(DeviceId id);
 
+  template <DeviceType T>
+  std::shared_ptr<T> getDevice(DeviceId id);
+
  private:
   DeviceId getNextId() const;
   std::vector<std::shared_ptr<Device>> _devices;
@@ -28,4 +31,9 @@ inline DeviceId DeviceManager::addDevice() {
   device->setId(getNextId());
   _devices.push_back(device);
   return device->getId();
+}
+
+template <DeviceType T>
+inline std::shared_ptr<T> DeviceManager::getDevice(DeviceId id) {
+  return std::static_pointer_cast<T>(getDevice(id));
 }
